@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import logo from '../../logo.svg';
+import PageHeader from '../bootstrap/header.js';
+import PageFooter from '../bootstrap/footer.js';
+import PageContainer from '../bootstrap/container.js';
 import './App.css';
+import picLinks from '../../picLinks.json';
 
 class App extends Component {
   render() {
+    console.log(picLinks.links[0])
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <PageHeader/>
+        <PageContainer links={picLinks.links}/>
+        <PageFooter/>
       </div>
     );
   }
