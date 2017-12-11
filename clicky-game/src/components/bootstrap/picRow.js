@@ -1,10 +1,26 @@
 import React, {Component} from 'react';
+let clickedPics = [];
+let val = 0;
 
 class PicRow extends Component {
 	state = {
-		arrPos: [0,1,2,3,4,5,6,7,8,9,10,11]
+		arrPos: [0,1,2,3,4,5,6,7,8,9,10,11],
+		score: val
 	}
-	randomize = () => {
+	compare = (id) => {
+		if (clickedPics.indexOf(id) == -1){
+			val++;
+			clickedPics.push(id);
+			this.setState ({score: val});
+		}
+		else{
+			val=0;
+			clickedPics = [];
+			this.setState({score: val});
+		}
+		console.log(this.state.score);
+	}
+	randomize = (id) => {
 		let arr = this.state.arrPos;
 		console.log("randomizer running");
 		let i = 0
@@ -17,6 +33,7 @@ class PicRow extends Component {
 		  arr[j] = temp
 		}
 		this.setState({arrPos: arr})
+		this.compare(id);
 	}
 	render (props) {
 		const links=this.props.links;
@@ -24,7 +41,7 @@ class PicRow extends Component {
 		return (
 			<div>
 			<div className="row">
-			  <div className="col-3" onClick={this.randomize}>
+			  <div className="col-3" onClick={()=>{this.randomize(links[arrPos[0]])}}>
 			    <img src={links[arrPos[0]]} className="img-fluid" alt="Responsive image"></img>
 			  </div>
 			  <div className="col-3" onClick={this.randomize}>
