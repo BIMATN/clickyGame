@@ -7,7 +7,7 @@ import picLinks from '../../picLinks.json';
 
 class App extends Component {
   render() {
-    console.log(picLinks.links[0])
+    //console.log(picLinks.links[0])
     return (
       <div className="App">
         <PageHeader/>
