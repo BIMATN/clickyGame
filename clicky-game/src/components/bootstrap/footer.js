@@ -1,11 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class PageFooter extends Component{
-	render(){
-		return(
-			<div><footer className="footer"><div className="bottom">Clicky Game! </div></footer></div>
-		)
-	}
-}
+const PageFooter = () => <div><footer className="footer"><div className="bottom">Clicky Game! </div></footer></div>;
 
 export default PageFooter;
