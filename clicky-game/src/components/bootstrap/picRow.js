@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PicRow = ({links, randomize}) => links.map(currentItem=>
-		<div onClick={()=>{randomize(currentItem)}}>
+		<div className="col-3" onClick={()=>{randomize(currentItem)}}>
 			<img src={currentItem} className="img-fluid" alt="scenery"></img>
 		</div>
 	);
