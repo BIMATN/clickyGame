@@ -1,7 +1,12 @@
 import React from 'react';
 
-const PicRow = ({links, arrPos, randomize}) =>
-			<div>
+const PicRow = ({links, randomize}) => links.map(currentItem=>
+		<div onClick={()=>{randomize(currentItem)}}>
+			<img src={currentItem} className="img-fluid" alt="scenery"></img>
+		</div>
+	);
+
+			/*<div>
 				<div className="row">
 				  <div className="col-3" onClick={()=>{randomize(links[arrPos[0]])}}>
 				    <img src={links[arrPos[0]]} className="img-fluid" alt="scenery"></img>
@@ -46,6 +51,6 @@ const PicRow = ({links, arrPos, randomize}) =>
 				    <img src={links[arrPos[11]]} className="img-fluid" alt="scenery"></img>
 				  </div>
 				</div>
-			</div>
+			</div>*/
 
 export default PicRow;

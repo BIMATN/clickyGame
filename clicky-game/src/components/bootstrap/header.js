@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from '../../logo.svg';
 
-class PageHeader extends Component {
-	render(props){
-		return(
+const PageHeader = ({score}) =>
 			<div>
 				<header className="App-header">
 				  <img src={logo} className="App-logo" alt="logo" />
@@ -12,7 +10,7 @@ class PageHeader extends Component {
 				  		<h1 className="App-title">Welcome to My Clicky Game!</h1>
 				  	</li>
 				  	<li className="nav-item mx-auto">
-				  		<h1 className="App-title">Score: {this.props.score}</h1>
+				  		<h1 className="App-title">Score: {score}</h1>
 				  	</li>
 				  </ul>
 				</header>
@@ -23,8 +21,5 @@ class PageHeader extends Component {
 				  You get a point for every new picture you click. If you click a picture you have already clicked the score resets! 
 				</p>
 			</div>
-		);
-	}
-}
 
 export default PageHeader;

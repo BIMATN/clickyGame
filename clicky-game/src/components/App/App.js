@@ -10,7 +10,8 @@ let val = 0;
 
 class App extends Component {
   state = {
-    arrPos: [0,1,2,3,4,5,6,7,8,9,10,11],
+    /*arrPos: [0,1,2,3,4,5,6,7,8,9,10,11],*/
+    links: picLinks.links,
     score: val
   }
   compare = (id) => {
@@ -27,7 +28,7 @@ class App extends Component {
     console.log(this.state.score);
   }
   randomize = (id) => {
-    let arr = this.state.arrPos;
+    let arr = picLinks.links;
     console.log("randomizer running");
     let i = 0
       , j = 0
@@ -38,7 +39,8 @@ class App extends Component {
       arr[i] = arr[j]
       arr[j] = temp
     }
-    this.setState({arrPos: arr})
+    /*this.setState({arrPos: arr})*/
+    this.setState({links: arr})
     this.compare(id);
   }
   render() {
@@ -47,7 +49,7 @@ class App extends Component {
       <div className="App">
         <PageHeader score={this.state.score}/>
         <PageContainer>
-          <PicRow links={picLinks.links} arrPos={this.state.arrPos} randomize={this.randomize} compare={this.compare}/>
+          <PicRow links={picLinks.links} randomize={this.randomize} compare={this.compare}/>
         </PageContainer>
         <PageFooter/>
       </div>
